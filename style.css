@@ -6,7 +6,6 @@
 }
 
 li, a {
-
   font-weight: 500;
   font-size: 16px;
   color: rgb(0, 0, 0);
@@ -21,8 +20,18 @@ header {
   background-color: rgb(255, 255, 255);
   position: sticky;
   top: 0;
+  box-shadow: 0 1px  #3d3d3d25;
+  z-index: 1;
 }
 
+header a:hover {
+  color: rgb(9, 211, 247);
+}
+
+header a:hover::after {
+  color: rgb(9, 211, 247);
+  transition: 0.3s;
+}
 .logo {
   cursor: pointer;
 }
@@ -35,6 +44,7 @@ header {
   display: inline-block;
   padding: 0px 20px;
 }
+
 
 
 .logo {
@@ -108,7 +118,10 @@ display:block;
  }
 
  @media screen and (max-width: 576px) {
-  
+  header a {
+    display: none;
+    position: absolute;
+  }
   .grid {
     display: grid;
     grid-template-columns: 5% auto 5%;
@@ -139,7 +152,7 @@ display:block;
     border-radius: 20px;
     padding: 2em 2em 0;
     height: 300px;
-    background: #00ccb1;
+    background: #cc0055;
     grid-column: 1;
     grid-row: 3;
   }
@@ -157,17 +170,9 @@ display:block;
     grid-template-columns: 1fr ;
     grid-template-rows: 1fr 3% 1fr 3% 1fr;
     margin:50px;
+    position:relative;
    }
-   header {
-    display: grid;
-    grid-template-columns: auto ;
-    grid-template-rows: 50px;
-    padding: 1px;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    position: sticky;
-    top:0;
-  }
+   
    .nav_links li a {
    color: rgb(78, 78, 80);  
    font-size: 25px;
